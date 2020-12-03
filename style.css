@@ -18,27 +18,29 @@ body {
     -moz-user-select: none;
     -khtml-user-select: none;
     user-select: none;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 
 @-webkit-keyframes AnimationName {
     0%{background-position:50% 0%}
-    50%{background-position:50% 97%}
+    50%{background-position:50% 88%}
     100%{background-position:50% 0%}
 }
 @-moz-keyframes AnimationName {
     0%{background-position:50% 0%}
-    50%{background-position:50% 97%}
+    50%{background-position:50% 88%}
     100%{background-position:50% 0%}
 }
 @-o-keyframes AnimationName {
     0%{background-position:50% 0%}
-    50%{background-position:50% 97%}
+    50%{background-position:50% 88%}
     100%{background-position:50% 0%}
 }
 @keyframes AnimationName {
     0%{background-position:50% 0%}
-    50%{background-position:50% 97%}
+    50%{background-position:50% 88%}
     100%{background-position:50% 0%}
 }
 

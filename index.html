@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="style.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="space"></div>
+
+  <div ng-controller="cookie">
+
+    <div id="DoggoBox">
+      <img id="hearts" class="hearts" src="https://media.giphy.com/media/3oKIPqM8BJ0ofNQOzK/giphy.gif" width="200px" />
+      <img id="Doggo" src="https://media.giphy.com/media/8PaStUq9cXMoHx9LXr/giphy.gif" width="400px" />
+    </div>
+
+    <h2 id="score">Doggo patted: 0 times</h2>
+
+    <div id="space"></div>
+
+    <h3>Uppgrades</h3>
+    <div class="flex">
+      <div>
+        <div id="bone" type="button" onclick="addPat()" value="mod">
+          <p id="bone-lvl">Bone lvl 0</p>
+          <img class="" src="https://media.giphy.com/media/cPZ6Iee56gjhTr6dDE/giphy.gif" width="200px" height="200px" />
+          <p id="bone-cost">Cost: 2</p>
+        </div>
+      </div>
+      <div>
+        <div id="hd" type="button" onclick="addHD()" value="mod">
+          <p id="hd-lvl">Sausage lvl 0</p>
+          <img src="https://media.giphy.com/media/emFvshM2eWiNyjSHTo/giphy.gif" width="230px" height="200px" />
+          <p id="hd-cost">Cost: 250</p>
+        </div>
+      </div>
+      <div>
+        <div id="beef" type="button" onclick="addBeef()" value="mod">
+          <p id="beef-lvl">Beef lvl 0</p>
+          <img src="https://media.giphy.com/media/lnOk6fv1o9TlXQnkts/giphy.gif" width="200px" height="200px" />
+          <p id="beef-cost">Cost: 1250</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <audio id="myAudio"><source src="lofi.mp3" type="audio/mpeg" /></audio>
+
+  <script>
+
+    document.getElementById('DoggoBox').addEventListener("click", click);
+
+    document.getElementById('bone').addEventListener("click", addPat);
+    document.getElementById('hd').addEventListener("click", addHD);
+    document.getElementById('beef').addEventListener("click", addBeef);
+
+
+
+    let score = 0;
+    let power = 1;
+
+    let patModifier = 0;
+    let hdModifier = 0;
+    let beefModifier = 0;
+
+    let patCost = 2;
+    let hdCost = 250;
+    let beefCost = 1250;
+
+    let patLvl = 0;
+    let hdLvl = 0;
+    let beefLvl = 0;
+
+    function click(){
+      document.getElementById("myAudio").play();
+
+      power = 1 + patModifier + hdModifier + beefModifier;
+      console.log(power);
+      score += power;
+      console.log(score);
+      document.getElementById('score').innerHTML = "Doggo patted: " + score + " times";
+
+      document.getElementById("hearts").classList.add('animate');
+      setTimeout(refreshheart, 500);
+    }
+
+    function refreshheart() {
+      document.getElementById("hearts").classList.remove('animate');
+    }
+
+    function addPat(){
+      if (score >= patCost) {
+        score -= patCost;
+        patCost *= 2;
+        patLvl++;
+        document.getElementById('bone-lvl').innerHTML = "Bone lvl " + patLvl;
+        document.getElementById('bone-cost').innerHTML = "Cost: " + patCost;
+        if (patLvl > 1) {
+          patModifier += 1;
+        } else {
+          patModifier = 1;
+        }
+      }
+    }
+
+    function addHD(){
+      if (score >= hdCost) {
+        score -= hdCost;
+        hdCost *= 4;
+        hdLvl++;
+        document.getElementById('hd-lvl').innerHTML = "Sausage lvl " + hdLvl;
+        document.getElementById('hd-cost').innerHTML = "Cost: " + hdCost;
+        if (hdLvl > 1) {
+          hdModifier *= 2;
+        } else {
+          hdModifier = 10;
+        }
+      }
+    }
+
+    function  addBeef(){
+      if (score >= beefCost) {
+        score -= beefCost;
+        beefCost *= 8;
+        beefLvl++;
+        document.getElementById('beef-lvl').innerHTML = "Beef lvl " + beefLvl;
+        document.getElementById('beef-cost').innerHTML = "Cost: " + beefCost;
+        if (beefLvl > 1) {
+          beefModifier *= 2;
+        } else {
+          let beefModifier = 100;
+        }
+      }
+    }
+
+  </script>
+</body>
+
+</html>

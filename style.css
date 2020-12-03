@@ -1,0 +1,136 @@
+
+body {
+    padding-top: 30px;
+    font-family: Arial;
+    background-color: white;
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    background: linear-gradient(184deg, #f4ebc1, #a0c1b8, #709fb0, #726a95);
+    background-size: 800% 800%;
+
+    -webkit-animation: AnimationName 45s ease infinite;
+    -moz-animation: AnimationName 45s ease infinite;
+    -o-animation: AnimationName 45s ease infinite;
+    animation: AnimationName 45s ease infinite;
+}
+
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 97%}
+    100%{background-position:50% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 97%}
+    100%{background-position:50% 0%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 97%}
+    100%{background-position:50% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 97%}
+    100%{background-position:50% 0%}
+}
+
+p {
+    font-size: 20px;
+    display: block;
+    margin: 5px;
+}
+
+#space {
+    margin: auto;
+    text-align:center;
+    padding-top: 20px;
+    margin-bottom: 5px;
+    font-size: 30px;
+    border-radius:10px;
+
+    width:389px;
+    height:60px;
+}
+
+table {
+    margin-top: 10px;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+td {
+    border:1px solid;
+}
+
+.hearts
+{
+  margin-top: -50px;
+  position: absolute;
+  opacity: 0
+}
+#DoggoBox
+{
+  cursor: pointer;
+}
+#DoggoBox:active #Doggo{
+  transform: translateY(10px);
+  transition: all 0.2s ease-out;
+}
+
+.animate {
+-webkit-animation: myfirst 0.5s;
+animation: myfirst 0.5s;
+}
+@keyframes myfirst {
+  0% {opacity: 0;}
+ 20% {opacity: 1;}
+ 80% {opacity: 1;}
+100% {opacity: 0;}
+}
+
+@keyframes bganimate {
+
+ 0% {background: #a6d393;}
+
+ 30$ {background: #90C978;}
+
+ 50% {background: #81b46c;}
+
+ 70% {background: #90C978;}
+
+ 100% {background: #a6d393;}
+}
+
+#numbers {
+    margin: auto;
+    text-align:center;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    border:5px solid;
+    border-radius:10px;
+    width:200px;
+    height:60px;
+}
+
+#upgradeLevel {
+    margin: auto;
+    text-align:center;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    border:5px solid;
+    border-radius:10px;
+    background-color:lightpink;
+    width:300px;
+    height:50px;
+}
+.flex
+{
+  display: flex;
+  justify-content: center;
+}

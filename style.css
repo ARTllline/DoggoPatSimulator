@@ -14,6 +14,10 @@ body {
     -moz-animation: AnimationName 45s ease infinite;
     -o-animation: AnimationName 45s ease infinite;
     animation: AnimationName 45s ease infinite;
+    
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
 }
 
 
